@@ -1,0 +1,8 @@
+<odoo>
+
+    <menuitem id="ubtracking_main_menu"
+              web_icon="ubtracking,static/description/icon.png"
+              name="Utility Bills Tracking"
+              sequence="10"/>
+
+</odoo>

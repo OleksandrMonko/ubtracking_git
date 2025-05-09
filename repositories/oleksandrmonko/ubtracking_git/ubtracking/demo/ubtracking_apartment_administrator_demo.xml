@@ -1,0 +1,30 @@
+<odoo>
+
+    <record id="ubtracking_apartment_administrator_1" model="ubtracking.apartment_administrator">
+        <field name="name">Vadym Korolenko</field>
+        <field name="description">in the office</field>
+        <field name="phone">+380995911111</field>
+        <field name="gender">male</field>
+        <!--<field name="user_id">101</field>-->
+        <field name="image_1920" type="base64" file="ubtracking/demo/photos/a1.jpeg"/>
+    </record>
+
+    <record id="ubtracking_apartment_administrator_2" model="ubtracking.apartment_administrator">
+        <field name="name">Viktor Dobrovolskyi</field>
+        <field name="description">in the office</field>
+        <field name="phone">+380504561111</field>
+        <field name="gender">male</field>
+        <!--<field name="user_id">102</field>-->
+        <field name="image_1920" type="base64" file="ubtracking/demo/photos/a2.jpeg"/>
+    </record>
+
+    <record id="ubtracking_apartment_administrator_3" model="ubtracking.apartment_administrator">
+        <field name="name">Inna Ganetska</field>
+        <field name="description">from home</field>
+        <field name="phone">+380673411111</field>
+        <field name="gender">female</field>
+        <!--<field name="user_id">103</field>-->
+        <field name="image_1920" type="base64" file="ubtracking/demo/photos/a3.jpeg"/>
+    </record>
+
+</odoo>

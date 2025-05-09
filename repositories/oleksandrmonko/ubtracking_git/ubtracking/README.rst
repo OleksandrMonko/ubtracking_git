@@ -11,9 +11,9 @@ The following modules are included in this system:
 
 1. **Apartments Management** manages apartment information.
 2. **Apartment Administrators Management** stores info about apartment administrators.
-2. **Apartment Users Management** stores info about apartment users.
-3. **Bills Management** keeps bills.
-4. **Payment Records Management** keeps payments.
+3. **Apartment Users Management** stores info about apartment users.
+4. **Bills Management** keeps bills.
+5. **Payment Records Management** keeps payments.
 
 Features
 ========
@@ -48,7 +48,6 @@ Contributors
 ============
 
 - Oleksandr Monko (https://github.com/OleksandrMonko)
-
 
 License
 =======

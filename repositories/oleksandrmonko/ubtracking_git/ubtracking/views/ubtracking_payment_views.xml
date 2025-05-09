@@ -1,0 +1,52 @@
+<odoo>
+
+    <record id="ubtracking_payment_tree" model="ir.ui.view">
+        <field name="name">ubtracking.payment.tree ()</field>
+        <field name="model">ubtracking.payment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="apartment_id"/>
+                <field name="service_name"/>
+                <field name="payment_date"/>
+                <field name="billing_period"/>
+                <field name="amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ubtracking_payment_form" model="ir.ui.view">
+
+        <field name="name">ubtracking.payment.form ()</field>
+        <field name="model">ubtracking.payment</field>
+        <field name="arch" type="xml">
+            <form string="Payment">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="apartment_id"/>
+                        <field name="service_name"/>
+                        <field name="payment_date"/>
+                        <field name="billing_period"/>
+                        <field name="amount"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ubtracking_payment_window"
+            model="ir.actions.act_window">
+        <field name="name">Payment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ubtracking.payment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="ubtracking_payment_menu"
+              action="action_ubtracking_payment_window"
+              parent="ubtracking_main_menu"
+              name="Payments" sequence="240"/>
+</odoo>

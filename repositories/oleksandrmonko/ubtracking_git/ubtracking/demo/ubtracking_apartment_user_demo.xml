@@ -1,0 +1,55 @@
+<odoo>
+
+    <record id="ubtracking_apartment_user_1" model="ubtracking.apartment_user">
+        <field name="name">Valentyna Rudenko</field>
+        <field name="description">with dog</field>
+        <field name="start_date" eval="(datetime.now() - timedelta(days=365*4))"/>
+        <field name="end_date" eval="(datetime.now() - timedelta(days=30*13))"/>
+        <field name="phone">+380992461111</field>
+        <field name="gender">female</field>
+        <!--<field name="user_id">201</field>-->
+        <field name="image_1920" type="base64" file="ubtracking/demo/photos/u1.jpeg"/>
+    </record>
+
+    <record id="ubtracking_apartment_user_2" model="ubtracking.apartment_user">
+        <field name="name">Olena Tkachenko</field>
+        <field name="description"></field>
+        <field name="start_date" eval="(datetime.now() - timedelta(days=30*12))"/>
+        <field name="end_date" eval="(datetime.now() - timedelta(days=30*1))"/>
+        <field name="phone">+380969741111</field>
+        <field name="gender">female</field>
+        <!--<field name="user_id">202</field>-->
+        <field name="image_1920" type="base64" file="ubtracking/demo/photos/u2.jpeg"/>
+    </record>
+
+    <record id="ubtracking_apartment_user_3" model="ubtracking.apartment_user">
+        <field name="name">Iryna Kolomiyets</field>
+        <field name="description">big family</field>
+        <field name="start_date" eval="(datetime.now())"/>
+        <field name="phone">+380672721111</field>
+        <field name="gender">female</field>
+        <!--<field name="user_id">203</field>-->
+        <field name="image_1920" type="base64" file="ubtracking/demo/photos/u3.jpeg"/>
+    </record>
+
+    <record id="ubtracking_apartment_user_4" model="ubtracking.apartment_user">
+        <field name="name">Oleksandr Kucher</field>
+        <field name="description">alone</field>
+        <field name="start_date" eval="(datetime.now() - timedelta(days=30*4))"/>
+        <field name="phone">+380508831111</field>
+        <field name="gender">male</field>
+        <!--<field name="user_id">204</field>-->
+        <field name="image_1920" type="base64" file="ubtracking/demo/photos/u4.jpeg"/>
+    </record>
+
+    <record id="ubtracking_apartment_user_5" model="ubtracking.apartment_user">
+        <field name="name">Andriy Anikin</field>
+        <field name="description">5 children</field>
+        <field name="start_date" eval="(datetime.now() - timedelta(days=30*2))"/>
+        <field name="phone">+380632531111</field>
+        <field name="gender">male</field>
+        <!--<field name="user_id">205</field>-->
+        <field name="image_1920" type="base64" file="ubtracking/demo/photos/u5.jpeg"/>
+    </record>
+
+</odoo>

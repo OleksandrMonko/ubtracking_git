@@ -1,0 +1,44 @@
+<odoo>
+
+    <record id="ubtracking_apartment_tree" model="ir.ui.view">
+        <field name="name">ubtracking.apartment.tree ()</field>
+        <field name="model">ubtracking.apartment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ubtracking_apartment_form" model="ir.ui.view">
+
+        <field name="name">ubtracking.apartment.form ()</field>
+        <field name="model">ubtracking.apartment</field>
+        <field name="arch" type="xml">
+            <form string="Apartment">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="apartment_administrator_id"/>
+                        <field name="apartment_user_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ubtracking_apartment_window"
+            model="ir.actions.act_window">
+        <field name="name">Apartment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ubtracking.apartment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="ubtracking_apartment_menu"
+              action="action_ubtracking_apartment_window"
+              parent="ubtracking_main_menu"
+              name="Apartments" sequence="200"/>
+</odoo>

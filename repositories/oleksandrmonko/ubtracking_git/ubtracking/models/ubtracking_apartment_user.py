@@ -11,8 +11,8 @@ class UBTrackingApartmentUser(models.Model):
     _name = 'ubtracking.apartment_user'
     _description = 'Apartment user'
 
-    start_date = fields.Date(required=True, string='Start Date')
-    end_date = fields.Date(required=False, string='End Date')
+    start_date = fields.Date(required=True)
+    end_date = fields.Date(required=False)
 
     user_apartment_ids = fields.One2many(
         comodel_name='ubtracking.apartment',

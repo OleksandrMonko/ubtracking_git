@@ -4,7 +4,7 @@
         <field name="name">ubtracking.apartment_administrator.tree ()</field>
         <field name="model">ubtracking.apartment_administrator</field>
         <field name="arch" type="xml">
-            <tree string="Apartment Administrators">
+            <tree>
                 <field name="name"/>
                 <field name="description"/>
             </tree>
@@ -23,7 +23,10 @@
                         <field name="description"/>
                         <field name="phone"/>
                         <field name="gender"/>
-                        <field name="image_1920"/>
+                        <group>
+                            <field name="image_1920" widget="image"
+                                   style="max-height:90px;"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
@@ -41,5 +44,5 @@
     <menuitem id="ubtracking_apartment_administrator_menu"
               action="action_ubtracking_apartment_administrator_window"
               parent="ubtracking_main_menu"
-              name="Apartment Administrators" sequence="200"/>
+              name="Apartment Administrators" sequence="210"/>
 </odoo>

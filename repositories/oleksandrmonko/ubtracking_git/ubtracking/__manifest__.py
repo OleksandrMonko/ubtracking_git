@@ -18,7 +18,7 @@
     'data': [
         'security/ubtracking_groups.xml',
         'security/ir.model.access.csv',
-        # 'security/hr_hospital_security.xml',
+        'security/ubtracking_security.xml',
         'views/ubtracking_menu.xml',
         'views/ubtracking_apartment_administrator_views.xml',
         'views/ubtracking_apartment_user_views.xml',

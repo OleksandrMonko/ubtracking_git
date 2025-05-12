@@ -13,9 +13,11 @@ class UBTrackingPerson(models.AbstractModel):
         comodel_name='res.users',
         ondelete='set null',
         default=lambda self: self.env.user)
+
+
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
         ('other', 'Other')
-    ], )
+    ],)
     image_1920 = fields.Image(string="Photo")

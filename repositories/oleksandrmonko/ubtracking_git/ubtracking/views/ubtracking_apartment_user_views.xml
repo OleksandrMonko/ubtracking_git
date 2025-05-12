@@ -20,6 +20,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="user_id"/>
                         <field name="description"/>
                         <field name="phone"/>
                         <field name="gender"/>
@@ -44,5 +45,6 @@
     <menuitem id="ubtracking_apartment_user_menu"
               action="action_ubtracking_apartment_user_window"
               parent="ubtracking_main_menu"
-              name="Apartment Users" sequence="220"/>
+              name="Apartment Users" sequence="220"
+              groups="ubtracking.group_apartment_administrator,ubtracking.group_admin"/>
 </odoo>

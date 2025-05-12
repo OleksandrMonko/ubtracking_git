@@ -1,0 +1,44 @@
+<odoo>
+
+    <record id="ubtracking_apartment_1" model="ubtracking.apartment">
+        <field name="name">Kyiv, Holosiivska str., 10, ap.98</field>
+        <field name="description">2 rooms, 7 floor</field>
+        <field name="apartment_administrator_id" ref="ubtracking_apartment_administrator_1"/>
+        <field name="apartment_user_id" ref="ubtracking_apartment_user_1"/>
+    </record>
+
+    <record id="ubtracking_apartment_2" model="ubtracking.apartment">
+        <field name="name">Kyiv, Khreshchatyk str., 3, ap.15</field>
+        <field name="description">5 rooms, 11 floor</field>
+        <field name="apartment_administrator_id" ref="ubtracking_apartment_administrator_1"/>
+        <field name="apartment_user_id" ref="ubtracking_apartment_user_2"/>
+    </record>
+
+    <record id="ubtracking_apartment_3" model="ubtracking.apartment">
+        <field name="name">Kyiv, Sofiivska sqr., 1, ap.8</field>
+        <field name="description">3 rooms, 1 floor</field>
+        <field name="apartment_administrator_id" ref="ubtracking_apartment_administrator_1"/>
+        <field name="apartment_user_id" ref="ubtracking_apartment_user_3"/>
+    </record>
+
+    <record id="ubtracking_apartment_4" model="ubtracking.apartment">
+        <field name="name">Kyivska obl., vil. Novosilka, Myru str., 21</field>
+        <field name="description">alone building, pool</field>
+        <field name="apartment_administrator_id" ref="ubtracking_apartment_administrator_2"/>
+        <field name="apartment_user_id" ref="ubtracking_apartment_user_4"/>
+    </record>
+
+    <record id="ubtracking_apartment_5" model="ubtracking.apartment">
+        <field name="name">Kyivska obl., vil. Novosilka, Tserkovna str., 5</field>
+        <field name="description">alone building, 5 rooms</field>
+        <field name="apartment_administrator_id" ref="ubtracking_apartment_administrator_2"/>
+        <field name="apartment_user_id" ref="ubtracking_apartment_user_5"/>
+    </record>
+
+    <record id="ubtracking_apartment_6" model="ubtracking.apartment">
+        <field name="name">Kyivska obl., t.Brovary, Budivelna str., 37, ap.18</field>
+        <field name="description">1 room, 2 floor</field>
+        <field name="apartment_administrator_id" ref="ubtracking_apartment_administrator_3"/>
+    </record>
+
+</odoo>

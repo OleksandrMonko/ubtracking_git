@@ -25,11 +25,7 @@
         'views/ubtracking_apartment_views.xml',
         'views/ubtracking_bill_views.xml',
         'views/ubtracking_payment_views.xml',
-        # 'views/hr_hospital_disease_views.xml',
-        # 'views/hr_hospital_specialty_views.xml',
-        # 'views/hr_hospital_visit_views.xml',
-        # 'wizard/hr_hospital_disease_report_wizard_view.xml',
-        # 'report/hr_hospital_doctor_report.xml',
+        'report/ubtracking_apartment_report.xml',
     ],
 
     'images': [
@@ -38,10 +34,9 @@
     'demo': [
         'demo/ubtracking_apartment_administrator_demo.xml',
         'demo/ubtracking_apartment_user_demo.xml',
-        # 'demo/hr_hospital_doctor_demo.xml',
-        # 'demo/hr_hospital_patient_demo.xml',
-        # 'demo/hr_hospital_visits_demo.xml',
-        # 'demo/hr_hospital_diagnosis_demo.xml',
+        'demo/ubtracking_apartment_demo.xml',
+        'demo/ubtracking_bill_demo.xml',
+        'demo/ubtracking_payment_demo.xml',
     ],
 
     'installable': True,

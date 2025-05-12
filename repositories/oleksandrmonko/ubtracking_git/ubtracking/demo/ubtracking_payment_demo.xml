@@ -1,0 +1,100 @@
+<odoo>
+
+    <record id="ubtracking_payment_1" model="ubtracking.payment">
+        <field name="name">Payment for 2025-02-01 for electricity. Amount 500.
+            Dated 2025-01-12
+        </field>
+        <field name="description">prepayment</field>
+        <field name="service_name">electricity</field>
+        <field name="apartment_id" ref="ubtracking_apartment_1"/>
+        <field name="payment_date"
+               eval="(datetime.now() - timedelta(days=29*4))"/>
+        <field name="billing_period"
+               eval="((datetime.now() - timedelta(days=30*3))).replace(day=1)"/>
+        <field name="amount">500</field>
+    </record>
+
+    <record id="ubtracking_payment_2" model="ubtracking.payment">
+        <field name="name">Payment for 2025-02-01 for water. Amount 200.
+            Dated 2025-01-12
+        </field>
+        <field name="description">prepayment</field>
+        <field name="service_name">water</field>
+        <field name="apartment_id" ref="ubtracking_apartment_1"/>
+        <field name="payment_date"
+               eval="(datetime.now() - timedelta(days=29*4))"/>
+        <field name="billing_period"
+               eval="((datetime.now() - timedelta(days=30*3))).replace(day=1)"/>
+        <field name="amount">200</field>
+    </record>
+
+    <record id="ubtracking_payment_3" model="ubtracking.payment">
+        <field name="name">Payment for 2025-02-01 for rent. Amount 5000.
+            Dated 2025-01-12
+        </field>
+        <field name="description">prepayment</field>
+        <field name="service_name">rent</field>
+        <field name="apartment_id" ref="ubtracking_apartment_1"/>
+        <field name="payment_date"
+               eval="(datetime.now() - timedelta(days=29*4))"/>
+        <field name="billing_period"
+               eval="((datetime.now() - timedelta(days=30*3))).replace(day=1)"/>
+        <field name="amount">5000</field>
+    </record>
+
+    <record id="ubtracking_payment_4" model="ubtracking.payment">
+        <field name="name">Payment for 2025-04-01 for electricity. Amount 421.
+            Dated 2025-04-11
+        </field>
+        <field name="description">cash</field>
+        <field name="service_name">electricity</field>
+        <field name="apartment_id" ref="ubtracking_apartment_2"/>
+        <field name="payment_date"
+               eval="(datetime.now() - timedelta(days=29*1))"/>
+        <field name="billing_period"
+               eval="((datetime.now() - timedelta(days=30*1))).replace(day=1)"/>
+        <field name="amount">421</field>
+    </record>
+
+    <record id="ubtracking_payment_5" model="ubtracking.payment">
+        <field name="name">Payment for 2025-04-01 for rent. Amount 15500.
+            Dated 2025-04-12
+        </field>
+        <field name="description">cash</field>
+        <field name="service_name">rent</field>
+        <field name="apartment_id" ref="ubtracking_apartment_2"/>
+        <field name="payment_date"
+               eval="(datetime.now() - timedelta(days=29*1))"/>
+        <field name="billing_period"
+               eval="((datetime.now() - timedelta(days=30*1))).replace(day=1)"/>
+        <field name="amount">15500</field>
+    </record>
+
+    <record id="ubtracking_payment_6" model="ubtracking.payment">
+        <field name="name">Payment for 2025-03-01. Amount 25000.
+            Dated 2025-03-12
+        </field>
+        <field name="description">all togather</field>
+        <field name="apartment_id" ref="ubtracking_apartment_4"/>
+        <field name="payment_date"
+               eval="(datetime.now() - timedelta(days=29*2))"/>
+        <field name="billing_period"
+               eval="((datetime.now() - timedelta(days=30*2))).replace(day=1)"/>
+        <field name="amount">25000</field>
+    </record>
+
+    <record id="ubtracking_payment_7" model="ubtracking.payment">
+        <field name="name">Payment for 2025-04-01. Amount 25000.
+            Dated 2025-04-12
+        </field>
+        <field name="description">all togather</field>
+        <field name="apartment_id" ref="ubtracking_apartment_4"/>
+        <field name="payment_date"
+               eval="(datetime.now() - timedelta(days=29*1))"/>
+        <field name="billing_period"
+               eval="((datetime.now() - timedelta(days=30*1))).replace(day=1)"/>
+        <field name="amount">25000</field>
+    </record>
+
+
+</odoo>

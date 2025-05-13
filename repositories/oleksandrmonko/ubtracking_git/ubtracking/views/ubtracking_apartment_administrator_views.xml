@@ -15,26 +15,22 @@
         <field name="name">ubtracking.apartment_administrator.form ()</field>
         <field name="model">ubtracking.apartment_administrator</field>
         <field name="arch" type="xml">
-            <form string="Apartment Administrator">
+            <form>
                 <sheet>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="name" class="oe_inline"/>
-                        </h1>
-                    </div>
-                    <newline/>
                     <group>
                         <group>
+                            <field name="name" class="oe_inline"/>
                             <field name="user_id"/>
                             <field name="description"/>
                             <field name="phone"/>
                             <field name="gender"/>
-                            <field name="administrator_apartment_ids" mode="kanban">
+                            <field name="administrator_apartment_ids"
+                                   mode="kanban">
                             </field>
-                            <group>
+                        </group>
+                        <group>
                                 <field name="image_1920" widget="image"
                                        style="max-height:90px;"/>
-                            </group>
                         </group>
                     </group>
                 </sheet>

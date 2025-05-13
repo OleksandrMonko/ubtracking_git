@@ -18,7 +18,7 @@
         <field name="end_date" eval="(datetime.now() - timedelta(days=30*1))"/>
         <field name="phone">+380969741111</field>
         <field name="gender">female</field>
-        <field name="user_id">8</field>
+        <field name="user_id">2</field>
         <field name="image_1920" type="base64" file="ubtracking/demo/photos/u2.jpeg"/>
     </record>
 
@@ -28,7 +28,7 @@
         <field name="start_date" eval="(datetime.now())"/>
         <field name="phone">+380672721111</field>
         <field name="gender">female</field>
-        <field name="user_id">10</field>
+        <field name="user_id">2</field>
         <field name="image_1920" type="base64" file="ubtracking/demo/photos/u3.jpeg"/>
     </record>
 

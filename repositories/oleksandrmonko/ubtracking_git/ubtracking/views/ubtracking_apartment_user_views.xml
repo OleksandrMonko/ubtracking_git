@@ -19,11 +19,13 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="user_id"/>
-                        <field name="description"/>
-                        <field name="phone"/>
-                        <field name="gender"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="user_id"/>
+                            <field name="description"/>
+                            <field name="phone"/>
+                            <field name="gender"/>
+                        </group>
                         <group>
                             <field name="image_1920" widget="image"
                                    style="max-height:90px;"/>

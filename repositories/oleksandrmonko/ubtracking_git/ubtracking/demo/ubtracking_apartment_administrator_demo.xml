@@ -5,7 +5,7 @@
         <field name="description">in the office</field>
         <field name="phone">+380995911111</field>
         <field name="gender">male</field>
-        <field name="user_id">9</field>
+        <field name="user_id">2</field>
         <field name="image_1920" type="base64" file="ubtracking/demo/photos/a1.jpeg"/>
     </record>
 
@@ -14,7 +14,7 @@
         <field name="description">in the office</field>
         <field name="phone">+380504561111</field>
         <field name="gender">male</field>
-        <field name="user_id">9</field>
+        <field name="user_id">2</field>
         <field name="image_1920" type="base64" file="ubtracking/demo/photos/a2.jpeg"/>
     </record>
 

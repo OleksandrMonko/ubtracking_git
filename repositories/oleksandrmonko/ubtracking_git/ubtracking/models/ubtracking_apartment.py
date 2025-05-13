@@ -16,3 +16,14 @@ class UBTrackingApartment(models.Model):
         comodel_name='ubtracking.apartment_administrator', )
     apartment_user_id = fields.Many2one(
         comodel_name='ubtracking.apartment_user', )
+
+    bill_ids = fields.One2many(
+        comodel_name='ubtracking.bill',
+        inverse_name='apartment_id',
+        string='Bills'
+    )
+    payment_ids = fields.One2many(
+        comodel_name='ubtracking.payment',
+        inverse_name='apartment_id',
+        string='Payments'
+    )

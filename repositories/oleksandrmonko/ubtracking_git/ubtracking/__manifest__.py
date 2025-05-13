@@ -9,6 +9,7 @@
 
     'depends': [
         'base',
+        'web',
     ],
 
     'external_dependencies': {
@@ -41,5 +42,5 @@
 
     'installable': True,
     'auto_install': False,
-    # 'i18n': True,
+    'i18n': True,
 }

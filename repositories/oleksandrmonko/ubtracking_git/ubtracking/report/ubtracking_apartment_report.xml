@@ -1,183 +1,123 @@
 <odoo>
 
-     <record id="ubtracking_apartment_paper_format" model="report.paperformat">
-        <field name="name">A4 Doctor</field>
-        <field name="default" eval="True"/>
-        <field name="format">A4</field>
-        <!--<field name="page_height">0</field>
-        <field name="page_width">0</field>-->
-        <field name="orientation">Portrait</field>
-        <field name="margin_top">40</field>
-        <field name="margin_bottom">15</field>
-        <field name="margin_left">10</field>
-        <field name="margin_right">10</field>
-        <field name="header_line" eval="False"/>
-        <field name="header_spacing">35</field>
-        <field name="dpi">90</field>
-    </record>
+  <record id="ubtracking_apartment_paper_format" model="report.paperformat">
+    <field name="name">A4 Apartment</field>
+    <field name="default" eval="True"/>
+    <field name="format">A4</field>
+    <!--<field name="page_height">0</field>
+    <field name="page_width">0</field>-->
+    <field name="orientation">Portrait</field>
+    <field name="margin_top">40</field>
+    <field name="margin_bottom">15</field>
+    <field name="margin_left">10</field>
+    <field name="margin_right">10</field>
+    <field name="header_line" eval="False"/>
+    <field name="header_spacing">35</field>
+    <field name="dpi">90</field>
+  </record>
 
-    <record id="ubtracking_apartment_main_report" model="ir.actions.report">
-        <field name="name">Apartment's report</field>
-        <field name="model">ubtracking.apartment</field>
-        <field name="report_type">qweb-html</field>
-        <field name="report_name">ubtracking.ubtracking_apartment_main_template</field>
-        <field name="report_file">hr_hospital.ubtracking_apartment_main_template</field>
-        <field name="print_report_name">(object.name)</field>
-        <field name="attachment"/>
-        <field name="binding_model_id" ref="model_ubtracking_apartment"/>
-        <field name="binding_type">report</field>
-        <field name="paperformat_id" ref="ubtracking.ubtracking_apartment_paper_format"/>
-    </record>
+  <record id="ubtracking_apartment_main_report" model="ir.actions.report">
+    <field name="name">Apartment's report</field>
+    <field name="model">ubtracking.apartment</field>
+    <field name="report_type">qweb-html</field>
+    <field name="report_name">ubtracking.report_ubtracking_apartment_main_template</field>
+    <field name="print_report_name">(object.name)</field>
+    <field name="attachment"/>
+    <field name="binding_model_id" ref="model_ubtracking_apartment"/>
+    <field name="binding_type">report</field>
+    <field name="paperformat_id"
+           ref="ubtracking.ubtracking_apartment_paper_format"/>
+  </record>
 
-    <!-- Report Template -->
-    <template id="ubtracking_apartment_main_template">
-         <t t-call="web.html_container">
-            <t t-call="web.external_layout">
-                <t t-foreach="docs" t-as="apartment">
-                    <strong>
+  <template id="report_ubtracking_apartment_main_template">
+    <t t-call="web.html_container">
+      <t t-call="web.external_layout">
+        <t t-foreach="docs" t-as="doc">
+          <t t-set="apartment" t-value="doc"/>
 
-                    </strong>
-                    <div class="row">
-                        <div name="apartment_main_block">
-                            <div>
-                                <h2>
-                                    <div t-field="apartment.name"/>
-                                    <div t-field="apartment.description"/>
-                                </h2>
-                                <span>
-                                    <strong>Apartment administrator:</strong>
-                                    <span t-field="apartment.apartment_administrator_id"/>
-                                </span>
-                                <span>
-                                    <strong>Apartment user:</strong>
-                                    <span t-field="apartment.apartment_user_id"/>
-                                </span>
-                            </div>
-                        </div>
-                        <t t-set="total_amount_balance" t-value="0"/>
-                        <h1 style="font-size: 24px; margin-bottom: 20px; text-align: center;">
-                            Bill`s Information
-                        </h1>
-                        <t t-set="bill_total_amount" t-value="0"/>
-                        <table class="table table-condensed" border="2"
-                               cellspacing="2"
-                               style="font-size: 18px; margin-bottom: 50px; text-align: center; width: 100%;">
-                            <thead>
-                                <tr>
-                                    <th>Billing period</th>
-                                    <th>Billing date</th>
-                                    <th>Service</th>
-                                    <th>Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <t t-set="bills"
-                                   t-value="request.env['ubtracking.bill'].search([('apartment_id', '=', apartment.id)], order='billing_date asc')"/>
-                                <tr t-foreach="bills" t-as="bill">
-                                    <td>
-                                        <span t-field="bill.billing_period"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="bill.billing_date"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="bill.service_name"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="bill.amount"/>
-                                    </td>
-                                    <t t-set="bill_total_amount"
-                                       t-value="bill_total_amount + bill.amount"/>
-                                    <t t-set="total_amount_balance"
-                                       t-value="total_amount_balance - bill.amount"/>
-                                </tr>
-                            </tbody>
-                             <!-- Display total for group -->
-                            <tfoot>
-                                <tr>
-                                    <td colspan="2">
-                                        <strong>Total bill</strong>
-                                    </td>
-                                    <td class="text-right">
-                                        <strong>
-                                            <t t-esc="bill_total_amount"/>
-                                        </strong>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                        <h1 style="font-size: 24px; margin-bottom: 20px; text-align: center;">
-                            Payment`s Information
-                        </h1>
-                         <t t-set="payment_total_amount" t-value="0"/>
-                        <table class="table table-condensed" border="2"
-                               cellspacing="2"
-                               style="font-size: 18px; margin-bottom: 50px; text-align: center; width: 100%;">
-                            <thead>
-                                <tr>
-                                    <th>Billing period</th>
-                                    <th>Payment date</th>
-                                    <th>Service</th>
-                                    <th>Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <t t-set="payments"
-                                   t-value="request.env['ubtracking.payment'].search([('apartment_id', '=', apartment.id)], order='payment_date asc')"/>
-                                <tr t-foreach="payments" t-as="payment">
-                                    <td>
-                                        <span t-field="payment.billing_period"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="payment.payment_date"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="payment.service_name"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="payment.amount"/>
-                                    </td>
-                                    <t t-set="payment_total_amount"
-                                       t-value="payment_total_amount + payment.amount"/>
-                                    <t t-set="total_amount_balance"
-                                       t-value="total_amount_balance + payment.amount"/>
-                                </tr>
-                            </tbody>
-                             <!-- Display total for group -->
-                            <tfoot>
-                                <tr>
-                                    <td colspan="2">
-                                        <strong>Total payment</strong>
-                                    </td>
-                                    <td class="text-right">
-                                        <strong>
-                                            <t t-esc="payment_total_amount"/>
-                                        </strong>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                        <div>
-                                <span>
-                                    <strong>Current balance:</strong>
-                                    <t t-esc="total_amount_balance"/>
-                                </span>
-                        </div>
-                    </div>
-                    <div style="position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 12px;">
-                        <t t-set="DateTime"
-                           t-value="datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S')"/>
-                        <p>Date of printing:
-                            <span t-esc="DateTime"/>
-                        </p>
-                        <p>City:
-                            <span t-esc="request.env.user.company_id.city"/>
-                        </p>
-                    </div>
-                </t>
-            </t>
+          <t t-set="bills" t-value="doc.bill_ids"/>
+          <t t-set="payments" t-value="doc.payment_ids"/>
+
+          <t t-set="total_amount_balance" t-value="0"/>
+          <t t-set="bill_total_amount" t-value="0"/>
+          <t t-set="payment_total_amount" t-value="0"/>
+
+          <h2><t t-esc="apartment.name"/></h2>
+          <p><t t-esc="apartment.description"/></p>
+
+          <p><strong>Apartment administrator:</strong> <t t-esc="apartment.apartment_administrator_id.name"/></p>
+          <p><strong>Apartment user:</strong> <t t-esc="apartment.apartment_user_id.name"/></p>
+
+          <h3 style="text-align: center;">Bill's Information</h3>
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;" border="1">
+            <thead>
+              <tr>
+                <th>Billing period</th>
+                <th>Billing date</th>
+                <th>Service</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <t t-foreach="bills" t-as="bill">
+                <tr>
+                  <td><t t-esc="bill.billing_period"/></td>
+                  <td><t t-esc="bill.billing_date"/></td>
+                  <td><t t-esc="bill.service_name"/></td>
+                  <td><t t-esc="bill.amount"/></td>
+                </tr>
+                <t t-set="bill_total_amount" t-value="bill_total_amount + bill.amount"/>
+                <t t-set="total_amount_balance" t-value="total_amount_balance - bill.amount"/>
+              </t>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3"><strong>Total Bill</strong></td>
+                <td><strong><t t-esc="bill_total_amount"/></strong></td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <h3 style="text-align: center;">Payment's Information</h3>
+          <table style="width: 100%; border-collapse: collapse;" border="1">
+            <thead>
+              <tr>
+                <th>Billing period</th>
+                <th>Payment date</th>
+                <th>Service</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <t t-foreach="payments" t-as="payment">
+                <tr>
+                  <td><t t-esc="payment.billing_period"/></td>
+                  <td><t t-esc="payment.payment_date"/></td>
+                  <td><t t-esc="payment.service_name"/></td>
+                  <td><t t-esc="payment.amount"/></td>
+                </tr>
+                <t t-set="payment_total_amount" t-value="payment_total_amount + payment.amount"/>
+                <t t-set="total_amount_balance" t-value="total_amount_balance + payment.amount"/>
+              </t>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3"><strong>Total Payment</strong></td>
+                <td><strong><t t-esc="payment_total_amount"/></strong></td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <p><strong>Current balance:</strong> <t t-esc="total_amount_balance"/></p>
+
+          <!-- <div style="position: fixed; bottom: 0; width: 100%; font-size: 12px; text-align: center;"> -->
+            <!-- <p>Date of printing: <t t-esc="format_datetime(datetime.datetime.now())"/></p> -->
+            <p>Date of printing: <t t-esc="now"/></p>
+            <p>City: <t t-esc="user.company_id.city"/></p>
+          <!-- </div> -->
         </t>
-    </template>
+      </t>
+    </t>
+  </template>
 </odoo>
+

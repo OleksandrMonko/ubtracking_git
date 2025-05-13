@@ -14,7 +14,6 @@ class UBTrackingPerson(models.AbstractModel):
         ondelete='set null',
         default=lambda self: self.env.user)
 
-
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),

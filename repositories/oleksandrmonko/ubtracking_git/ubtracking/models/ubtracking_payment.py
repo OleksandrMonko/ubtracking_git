@@ -1,6 +1,8 @@
 import logging
 
 from odoo import models, fields, api
+from datetime import datetime
+
 # from odoo import datetime
 
 _logger = logging.getLogger(__name__)
@@ -15,8 +17,9 @@ class UBTrackingPayment(models.Model):
 
     apartment_id = fields.Many2one(comodel_name='ubtracking.apartment',
                                    string='Apartment', required=True)
-    payment_date = fields.Datetime(default=fields.Date.today(),
-                                   required=True)
+    payment_date = fields.Datetime(
+        default=fields.Date.today(),
+        required=True)
 
     billing_period = fields.Date(default=fields.Date.today().replace(day=1))
 

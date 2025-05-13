@@ -16,8 +16,9 @@ class UBTrackingBill(models.Model):
 
     apartment_id = fields.Many2one(comodel_name='ubtracking.apartment',
                                    required=True)
-    billing_date = fields.Datetime(default=fields.Date.today(),
-                                   required=True)
+    billing_date = fields.Datetime(
+        default=fields.Date.today(),
+        required=True)
 
     billing_period = fields.Date(default=fields.Date.today().replace(day=1))
 
